@@ -20,7 +20,28 @@ export default {
 
 <template>
   <div class="country">
-    <!--TODO: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com para la bandera-->
+    <!--: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com para la bandera
+            "id": 1,
+        "name": "Afghanistan",
+        "iso3": "AFG",
+        "iso2": "AF",
+        "numeric_code": "004",
+        "phone_code": "93",
+        "capital": "Kabul",
+        "currency": "AFN",
+        "currency_name": "Afghan afghani",
+        "currency_symbol": "؋",
+        "tld": ".af",
+        "native": "افغانستان",
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "timezones":
+    -->
+    <h1>{{ country.name }}</h1>
+    <p>Capital: {{ country.capital }}</p>
+    <p>Moneda: {{ country.currency_name }} ({{ country.currency}})</p>
+    <p>Región: {{ country.region }}</p>
+    <img :src="'https://www.countryflagsapi.com'" />
     <img
       width="400"
       height="400"

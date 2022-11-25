@@ -18,8 +18,16 @@ export default {
   },
   methods: {
     filtrarPais(e) {
-      // TODO: Implementar. filtra el país de acuerdo al valor del input. Hint: Recuerda la función filter
+      // : Implementar. filtra el país de acuerdo al valor del input. Hint: Recuerda la función filter
       const filtro = e.target.value;
+      if (filtro === "") {
+        this.countries = countries;
+      } else {
+        this.countries = countries.filter((country) =>
+          country.name.toLowerCase().includes(filtro.toLowerCase())
+        );
+      }
+
     },
   },
 };
@@ -31,10 +39,12 @@ export default {
       placeholder="Busca un país"
       :value="this.paisActual"
       @input="filtrarPais"
-    />
+    /> 
   </div>
   <div class="countries-container">
-    <!--//TODO: pasar una propiedad para determinar si al componente se le puede hacer click -->
+    <!--//: pasar una propiedad para determinar si al componente se le puede hacer click-->
+    <!--//la propiedad debe llamarse "clickable" y debe ser booleana-->
+
     <CountryComponent
       v-for="(country, index) in countries"
       :key="index"
@@ -44,7 +54,7 @@ export default {
       :currency="country.currency"
       :region="country.region"
       :code="country.iso2"
-
+      :clickable="false" 
     ></CountryComponent>
   </div>
 </template>
